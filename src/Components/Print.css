@@ -1,0 +1,44 @@
+table, th, td {
+    border:1px solid black;
+  }
+.center{
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+.sample{
+  text-align: center;
+  padding: 50px;
+}
+.maindiv{
+  padding: 50px;
+}
+.div1{
+  text-align: center;
+}
+.div2{
+  display: flex;
+  justify-content: space-evenly;
+}
+.div3{
+  display: flex;
+  justify-content: space-between;
+}
+.div4{
+  display: flex;
+}
+.div5{
+  margin-left: 50px;
+}
+.div6{
+  width: 100%;
+}
+.div7{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.size{
+  font-size: large;
+}

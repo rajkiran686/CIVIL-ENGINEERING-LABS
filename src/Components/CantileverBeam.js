@@ -8,7 +8,7 @@ import {useForm} from 'react-hook-form'
 import Textfield from './Textfield';
 import { useReactToPrint } from 'react-to-print';
 import Print2 from './Print2.js'
-const Tension = () => {
+const CantileverBeam = () => {
    var [res,setres]=useState();
    var [first,setfirst]=useState();
    var [second,setsecond]=useState();
@@ -55,4 +55,4 @@ return (
     </div>
   )
 }
-export default Tension
+export default CantileverBeam

@@ -1,5 +1,4 @@
-import { Button, Card, CardActionArea,CardActions, CardContent, CardMedia, Typography ,Box, ButtonBase, Alert} from '@mui/material'
-import { Stack } from '@mui/system'
+import { Button, Card, CardActionArea,CardActions, CardContent, CardMedia, Typography ,Box} from '@mui/material'
 import React from 'react'
 import img1 from './1.jpg'
 import img2 from './2.jpg'
@@ -9,69 +8,44 @@ import img5 from './5.JPG'
 import img6 from './6.jpg'
 import background from './13.jpg';
 import { useNavigate } from 'react-router-dom';
-import { borders } from '@mui/system';
-
-
-
 const Home = () => {
     const Navigate=useNavigate();
-   
     var arr=[{
             names:"STRENGTH OF MATERIALS",
             img:img1,
             path:"/Som"
         },
-         {
+        {
             names:"CONCRETE TECHNOLOGY",
             img:img2,
-            path:"/Ct"
-
-            
+            path:"/Ct"  
         },
         {
             names:"SOIL  MECHANICS ",
             img:img4,
             path:"/Sm"
-            
-
         },
         {
             names:"ENVIRONMENTAL ENGINEERING",
             img:img3,
             path:"/Ee"
-            
-
         },
         {
             names:"HIGHWAY MATERIALS TESTING",
             img:img5,
             path:"/Hmt"
-            
-
         },
         {
             names:"FLUID MECHANICS",
             img:img6,
             path:"/Fmhm"
-            
-
-        }
-        
-
-    ]
-
-
-    
-   
-  return (
+        }]
+return (
     <div className='qbg' style={{backgroundImage:`url(${background})`, backgroundSize: 'cover',overflow: 'hidden', backgroundRepeat  : 'no-repeat',width:'100% ',height:'100%',
        backgroundPosition: 'center',}}>
         <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-evenly',marginTop:'100px', gap:'100px 0px',marginBottom:'100px'}}>
-
-         {
-            arr.map((value)=>{return(
-                
-                <Box width='400px'  > 
+         {arr.map((value)=>{return(
+            <Box width='400px'  > 
             <Card sx={{borderRadius: '16px',height:'450px'}}>
                 <CardActionArea onClick={()=>{Navigate(value.path)}}>
                 <CardMedia component='img' image={value.img}  height='300'></CardMedia>
@@ -83,13 +57,10 @@ const Home = () => {
                 </CardActions>
                 </CardActionArea>
             </Card>
-            </Box> )
-            })
-         }    
-    
+            </Box>)
+            })}    
     </div>
     </div>
   )
 }
-
 export default Home

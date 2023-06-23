@@ -2,13 +2,14 @@ import { TextField } from '@mui/material'
 import React, { useState } from 'react'
 
 
-const Textfield= ({label,variant,helperText,error,register,pattern,name,...props}) => {
-  console.log("pattern is ",pattern )
+
+const Textfield= ({label,valueAsNumber,variant,helperText,error,register,pattern,required,name,...props}) => {
+ 
 
 
   return (
     
-     <TextField label={label} fullWidth={true} variant={variant} {...register(name,{required:{value:true,message:'this field is required'},pattern:pattern})} name={name} helperText={helperText} error={error} {...props} 
+     <TextField label={label} fullWidth={true} variant={variant} {...register(name,{required:required,pattern:pattern,valueAsNumber})} name={name} helperText={helperText} error={error} {...props} 
 
      
      />

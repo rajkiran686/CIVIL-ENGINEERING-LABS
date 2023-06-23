@@ -1,26 +1,26 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Box, Stack } from '@mui/system';
+import { Box} from '@mui/system';
 import img11 from './11.jpeg';
 import img15 from './15.jpg';
-
 import img12 from './12.jpd.jpg';
-
-
+import img16 from './16.jpg';
+import img17 from './17.jpg'
+import img18 from './18.jpg'
+import img19 from './19.jpg'
+import img20 from './20.jpg'
 const Som = () => {
     const Navigate=useNavigate();
     function back(){
         Navigate(-1);
     }
-    
     var arr=[
       {
-        names:"TENSION TEST ON STEE",
+        names:"TENSION TEST ON STEEL",
         img:img11,
         path:"/tension"
-
       },
       {
         names:"FINENESS MODULUS OF AGGREGATE",
@@ -31,10 +31,34 @@ const Som = () => {
         names:"COMPRESSION TEST ON WOOD",
         img:img15,
         path:"/wood"
+      },
+      {
+        names:"BRINEEL'S HARDNESS TEST",
+        img:img16,
+        path:"/brineels"
+      },
+      {
+        names:"IMPACT STRENGTH TEST",
+        img:img17,
+        path:"/impact"
+      },
+      {
+        names:"BENDING TEST ON SIMPLY SUPPORTED BEAMS",
+        img:img18,
+        path:'/simplysupportedbeam'
+      },
+      {
+        names:"BENDING TEST ON CANTILEVER BEAMS",
+        img:img19,
+        path:'/cantileverbeam',
+      },
+      {
+        names:"TEST ON SPRINGS",
+        img:img20,
+        path:'/springtest'
       }
     ]
   return (
-   
     <div>
         <Button variant='outlined'  startIcon={<ArrowBackIosIcon/>}  onClick={back} style={{marginLeft:'50px'}}>BACK</Button>
         <Typography variant='h3' color='purple' textAlign='center'>STRENGTH OF MATERIALS</Typography>
@@ -55,12 +79,10 @@ const Som = () => {
                 </CardActionArea>
             </Card>
             </Box>
-            
           )})
          }
          </div>
     </div>
   )
-}
-
+  }
 export default Som
