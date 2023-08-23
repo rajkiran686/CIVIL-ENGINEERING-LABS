@@ -10,17 +10,16 @@ table, th, td {
   text-align: center;
   padding: 50px;
 }
-.maindiv{
+.maindivSS{
+  padding: 20px;
+}
+.maindivT{
   padding: 50px;
 }
 .div1{
   text-align: center;
 }
 .div2{
-  display: flex;
-  justify-content: space-evenly;
-}
-.div3{
   display: flex;
   justify-content: space-between;
 }
@@ -33,10 +32,16 @@ table, th, td {
 .div6{
   width: 100%;
 }
-.div7{
+.div7SS{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.div7T{
   margin-top: 50px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
 }
 .size{
