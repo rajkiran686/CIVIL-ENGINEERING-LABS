@@ -44,7 +44,18 @@ import AvailableChlorine from './components/environmental-engineering/AvailableC
 import DissolvedOxygen from './components/environmental-engineering/DissolvedOxygen';
 import Environmental from './components/environmental-engineering/Environmental';
 import SpGravityOfSoil from './components/soil-mechanics/SpGravityOfSoil';
-
+import Venturimeter from './components/fluid-mechanics/Venturimeter'
+import CentrifugalPump from './components/fluid-mechanics/CentrifugalPump';
+import ImpactOfJet from './components/fluid-mechanics/ImpactOfJet';
+import MouthPieceByConstant from './components/fluid-mechanics/MouthPieceByConstant';
+import MouthPieceByFalling from './components/fluid-mechanics/MouthPieceByFalling';
+import Orificemeter from './components/fluid-mechanics/Orificemeter';
+import OrificemeterByConstant from './components/fluid-mechanics/OrificemeterByConstant';
+import OrificemeterByFalling from './components/fluid-mechanics/OrificemeterByFalling';
+import PeltonTurbine from './components/fluid-mechanics/PeltonTurbine';
+import PipeFriction from './components/fluid-mechanics/PipeFriction';
+import ReciprocatingPump from './components/fluid-mechanics/ReciprocatingPump';
+import Vnotch from './components/fluid-mechanics/Vnotch';
 function App() {
   return (
     <div className='Appbg'>
@@ -91,6 +102,29 @@ function App() {
         <Route path='/ee/Available_chlorine' element={<AvailableChlorine/>}/>
         <Route path='/ee/do' element={<DissolvedOxygen/>}/>
         <Route path='/ee/environmental' element={<Environmental/>} />
+        <Route path='/fmhm/venturimeter' element={<Venturimeter/>}/>
+        <Route path='/fmhm/centrifugal' element={<CentrifugalPump/>}/>
+        <Route path='/fmhm/impact' element={<ImpactOfJet/>}/>
+        <Route path='/fmhm/mouthpiece_constant' element={<MouthPieceByConstant/>}/>
+        <Route path='/fmhm/mouthpiece_falling' element={<MouthPieceByFalling/>}/>
+        <Route path='/fmhm/orifice' element={<Orificemeter/>}/>
+        <Route path='/fmhm/orifice_constant' element={<OrificemeterByConstant/>}/>
+        <Route path='/fmhm/orifice_falling' element={<OrificemeterByFalling/>}/>
+        <Route path='/fmhm/pelton' element={<PeltonTurbine/>}/>
+        <Route path='/fmhm/pipefriction' element={<PipeFriction/>}/>
+        <Route path='/fmhm/reciprocating' element={<ReciprocatingPump/>}/>
+        <Route path='/fmhm/vnotch' element={<Vnotch/>}/>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
