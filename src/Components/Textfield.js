@@ -9,7 +9,7 @@ const Textfield= ({label,valueAsNumber,variant,helperText,error,register,pattern
 
   return (
     
-     <TextField label={label} fullWidth={true} variant={variant} {...register(name,{required:required,pattern:pattern,valueAsNumber})} name={name} helperText={helperText} error={error} {...props} 
+     <TextField label={label} fullWidth={true}  variant={variant} {...register(name,{required:required,pattern:pattern,valueAsNumber})} name={name} helperText={helperText} error={error} {...props} 
 
      
      />

@@ -56,6 +56,12 @@ import PeltonTurbine from './components/fluid-mechanics/PeltonTurbine';
 import PipeFriction from './components/fluid-mechanics/PipeFriction';
 import ReciprocatingPump from './components/fluid-mechanics/ReciprocatingPump';
 import Vnotch from './components/fluid-mechanics/Vnotch';
+import AggregateCrushing from './components/highway-materials-testing/AggregateCrushing';
+import AggregateImpact from './components/highway-materials-testing/AggregateImpact';
+import DevalsAttritionTest from './components/highway-materials-testing/DevalsAttritionTest';
+import SpgravityAndWaterAbsorption from './components/highway-materials-testing/WaterAbsorption.js';
+import AggregateGradation from './components/highway-materials-testing/AggregateGradation';
+import ShapeTest from './components/highway-materials-testing/ShapeTest.js';
 function App() {
   return (
     <div className='Appbg'>
@@ -114,22 +120,12 @@ function App() {
         <Route path='/fmhm/pipefriction' element={<PipeFriction/>}/>
         <Route path='/fmhm/reciprocating' element={<ReciprocatingPump/>}/>
         <Route path='/fmhm/vnotch' element={<Vnotch/>}/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <Route path='/hmt/crushing' element={<AggregateCrushing/>}/>
+        <Route path='/hmt/impact' element={<AggregateImpact/>}/>
+        <Route path='/hmt/shapetest' element={<ShapeTest/>}/>
+        <Route path='/hmt/devals' element={<DevalsAttritionTest/>}/>
+        <Route path='/hmt/spgravity' element={<SpgravityAndWaterAbsorption/>}/>
+        <Route path='/hmt/gradation' element={<AggregateGradation/>}/> 
       </Routes> 
      <Footer />
     </div>

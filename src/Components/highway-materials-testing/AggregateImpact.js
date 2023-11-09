@@ -3,25 +3,20 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import HomeIcon from '@mui/icons-material/Home';
 import React, { useRef, useState } from 'react'
 import ErrorMessage from '../ErrorMessage';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Stack } from '@mui/system';
 import {useForm} from 'react-hook-form'
 import Textfield from '../Textfield';
 import { useReactToPrint } from 'react-to-print';
-import TotalSolidsPrint from './TotalSolidsPrint';
-
-const TotalSolids = () => {
-   var[initial,setinitial]=useState()
-   var[volume,setvolume]=useState()
-   var[final,setfinal]=useState()
-   var[res,setres]=useState() 
-   var[type,settype]=useState("")
-   var[units,setunits]=useState("")
-   const location=useLocation()
+// import Print2 from '../Print2.js'
+const AggregateImpact = () => {
+   var [res,setres]=useState();
+//    var [first,setfirst]=useState();
+//    var [second,setsecond]=useState();
    var ComponentRef=useRef();
    var handleprint=useReactToPrint({
     content:()=>ComponentRef.current,
-    pageStyle:"@page { size: 10in 14in }"
+    // pageStyle:"@page { size: 10in 14in }"
    })
    const {register,handleSubmit,formState:{errors}}=useForm({mode:'all'})
    const Navigate=useNavigate();
@@ -29,17 +24,14 @@ const TotalSolids = () => {
     Navigate(-1);
     }
     const home=()=>{
-        Navigate('/');
-        }
+      Navigate("/")
+    }
     function submit(data){
-        setvolume(data.v)
-        settype(data.name)
-        setinitial(data.w1)
-        setfinal(data.w2)
-        setunits("mg/lit")
-        res=(((data.w2-data.w1)/data.v)*1000).toFixed(2)
-        setres(parseFloat(res))
-        }
+    //   setfirst(data.w1)
+    //   setsecond(data.w2)
+      res=(data.w3*100/(data.w1-data.w2)).toFixed(2)
+      setres(res)
+    }
 return (
     <div>
     <button type="button" class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg  text-xs  md:text-lg  px-2 md:px-5 md:py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2 md:m-5 mt-5 ml-2" onClick={back}>
@@ -54,32 +46,31 @@ return (
 </svg>
   HOME
 </button>
-    <p className='flex justify-center md:text-4xl text-gray-500  pt-10'>{location.state.head}</p>
+    <p className='flex justify-center md:text-4xl text-gray-500  pt-10'>AGGREGATE IMPACT TEST</p>
     <div style={{textAlign:'center'}}>
-    <form onSubmit={handleSubmit(submit)}>
+          <form onSubmit={handleSubmit(submit)}>
     <Stack spacing={2} direction='column' className='w-auto   space-y-5  p-5 md:max-w-lg mx-auto'>
-    <Textfield label="Identification of sample [ex:tapwater]" variant="outlined" name="name" register={register}   required={{value:true,message:"this field is required"}}   pattern={{value: /^[A-Za-z]+$/i,message:'enter only alphabets'}}  error={errors?.name} helperText={errors.name?.message}/>
-    <Textfield label="Volume of Sample taken" variant="outlined" name="v" register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={errors?.v} helperText={errors.v?.message}/>
-    <Textfield label="Initial weight of dish" variant="outlined" name="w1" register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={errors?.w1} helperText={errors.w1?.message}/>
-    <Textfield label="Final weight of dish" variant="outlined" name="w2" register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={errors?.w2} helperText={errors.w2?.message}/><br/>
+    <Textfield label="Weight of specimen after 25 blows in mould[w1]" variant="outlined" name="w1" register={register} valueAsNumber={true} required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w1?.message} error={errors?.w1}/>
+    <Textfield label="Empty weight of specimen[w2]" variant="outlined" name="w2" register={register} valueAsNumber={true} required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w2?.message} error={errors?.w2}/>
+    <Textfield label="material passing through 2.36mm sieve[w3]" variant="outlined" name="w3" register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w3?.message} error={errors?.w3}/>
     <div style={{display:'flex',justifyContent:'space-evenly'}}>
     <Button variant='contained' type='submit' style={{width:'80%'}}>submit</Button>
     <button onClick={handleprint} style={{width:'20%'}} className=' bg-pink-600'>print</button>
     </div>
     {Object.keys(errors).length!==0 && <ErrorMessage>please fill all the fields</ErrorMessage>}
-    </Stack><br/>
-    <div style={{fontSize:'30px'}}>{location.state.head}: {res} {units}</div>
-
+    <div style={{fontSize:'20px'}}>Aggregate impact value:{res} %</div>
+    </Stack>
     </form>
     </div>
-    <div style={{display:'none'}}>
+    {/* <div style={{display:'none'}}>
       <div ref={ComponentRef}>
-        <TotalSolidsPrint initial={initial} units={units} head={location.state.head} final={final} volume={volume} type={type} res={res}/>
+        <Print2 first={first} Ref="SM/W 183/2021-22" second={second} res={res} head1="Weight of dry sample taken" head2="weight of material passing through 2.36mm sieve" head3="Aggregate crushing value:" company="My Nest Developers," village="Narasimhapuram," city="Bhimavaram," dist="W.G.District."
+         purpose='M30 grade RMC Concrete Cubes for "Construction of G+4 Costal Paradise apartment (B-Block) 1st slab, Narasimhapuram, Bhimavaram, W.G.District" -Reg.' dated='15-03-2023.' title='AGGREGATE CRUSHING VALUE TEST:' lab='HMT'/>
 
       </div>
 
-    </div>
+    </div> */}
     </div>
   )
 }
-export default TotalSolids
+export default AggregateImpact;

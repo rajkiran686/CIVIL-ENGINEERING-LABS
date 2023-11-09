@@ -64,8 +64,8 @@
 
 .grid-container {
   display: grid;
-  /* column-gap: 50px; */
-  row-gap:50px;
+   column-gap: 50px; 
+   row-gap:50px;
   grid-template-columns: auto auto auto;
-  padding: 50px;
-}
+  padding: 50px; 
+ } 
