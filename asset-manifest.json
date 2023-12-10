@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CIVIL-ENGINEERING-LABS/static/css/main.7fabc20d.css",
-    "main.js": "/CIVIL-ENGINEERING-LABS/static/js/main.9a421174.js",
+    "main.js": "/CIVIL-ENGINEERING-LABS/static/js/main.a71d4a45.js",
     "static/js/787.917857b7.chunk.js": "/CIVIL-ENGINEERING-LABS/static/js/787.917857b7.chunk.js",
     "static/media/1.jpg": "/CIVIL-ENGINEERING-LABS/static/media/1.f5abfdd6dd7b92140dbe.jpg",
     "static/media/11.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/11.f748907d25a4932382af.jpeg",
@@ -9,7 +9,6 @@
     "static/media/37.jpg": "/CIVIL-ENGINEERING-LABS/static/media/37.e2ed6a4eaeeb46c2ea08.jpg",
     "static/media/total_suspended.jpg": "/CIVIL-ENGINEERING-LABS/static/media/total_suspended.cfd71e17b63a60ca9db8.jpg",
     "static/media/devals.jpg": "/CIVIL-ENGINEERING-LABS/static/media/devals.595fe2fa35026433466d.jpg",
-    "static/media/bg-image2.jpg": "/CIVIL-ENGINEERING-LABS/static/media/bg-image2.6466860b30bf364f40c7.jpg",
     "static/media/12.jpd.jpg": "/CIVIL-ENGINEERING-LABS/static/media/12.jpd.8d7d145a491f5d3c24ac.jpg",
     "static/media/22.jpg": "/CIVIL-ENGINEERING-LABS/static/media/22.1f578a3d3526dc3a1087.jpg",
     "static/media/logo1.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/logo1.191e87594cb0b59b9984.jpeg",
@@ -21,11 +20,11 @@
     "static/media/jar_test.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/jar_test.73b3758363b2775c913d.jpeg",
     "index.html": "/CIVIL-ENGINEERING-LABS/index.html",
     "main.7fabc20d.css.map": "/CIVIL-ENGINEERING-LABS/static/css/main.7fabc20d.css.map",
-    "main.9a421174.js.map": "/CIVIL-ENGINEERING-LABS/static/js/main.9a421174.js.map",
+    "main.a71d4a45.js.map": "/CIVIL-ENGINEERING-LABS/static/js/main.a71d4a45.js.map",
     "787.917857b7.chunk.js.map": "/CIVIL-ENGINEERING-LABS/static/js/787.917857b7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7fabc20d.css",
-    "static/js/main.9a421174.js"
+    "static/js/main.a71d4a45.js"
   ]
 }
