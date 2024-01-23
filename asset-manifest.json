@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/CIVIL-ENGINEERING-LABS/static/css/main.fa7bd6e9.css",
+    "main.js": "/CIVIL-ENGINEERING-LABS/static/js/main.e6ce07c9.js",
+    "static/js/787.917857b7.chunk.js": "/CIVIL-ENGINEERING-LABS/static/js/787.917857b7.chunk.js",
+    "static/media/1.jpg": "/CIVIL-ENGINEERING-LABS/static/media/1.f5abfdd6dd7b92140dbe.jpg",
+    "static/media/11.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/11.f748907d25a4932382af.jpeg",
+    "static/media/37.jpg": "/CIVIL-ENGINEERING-LABS/static/media/37.e2ed6a4eaeeb46c2ea08.jpg",
+    "static/media/total_suspended.jpg": "/CIVIL-ENGINEERING-LABS/static/media/total_suspended.cfd71e17b63a60ca9db8.jpg",
+    "static/media/pycnometer.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/pycnometer.be025bbf95eb17a2d1e3.jpeg",
+    "static/media/devals.jpg": "/CIVIL-ENGINEERING-LABS/static/media/devals.595fe2fa35026433466d.jpg",
+    "static/media/12.jpd.jpg": "/CIVIL-ENGINEERING-LABS/static/media/12.jpd.8d7d145a491f5d3c24ac.jpg",
+    "static/media/22.jpg": "/CIVIL-ENGINEERING-LABS/static/media/22.1f578a3d3526dc3a1087.jpg",
+    "static/media/logo1.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/logo1.191e87594cb0b59b9984.jpeg",
+    "static/media/2.jpg": "/CIVIL-ENGINEERING-LABS/static/media/2.53bbeece5485dfe53a08.jpg",
+    "static/media/30.jpg": "/CIVIL-ENGINEERING-LABS/static/media/30.9e2606581ef6f2c9a509.jpg",
+    "static/media/29.jpg": "/CIVIL-ENGINEERING-LABS/static/media/29.41f5c8da08315ef4b5cd.jpg",
+    "static/media/5.JPG": "/CIVIL-ENGINEERING-LABS/static/media/5.964c323c8cb431431d99.JPG",
+    "static/media/gradation.jpg": "/CIVIL-ENGINEERING-LABS/static/media/gradation.3d21ce16fb7a5310dd74.jpg",
+    "static/media/jar_test.jpeg": "/CIVIL-ENGINEERING-LABS/static/media/jar_test.73b3758363b2775c913d.jpeg",
+    "index.html": "/CIVIL-ENGINEERING-LABS/index.html",
+    "main.fa7bd6e9.css.map": "/CIVIL-ENGINEERING-LABS/static/css/main.fa7bd6e9.css.map",
+    "main.e6ce07c9.js.map": "/CIVIL-ENGINEERING-LABS/static/js/main.e6ce07c9.js.map",
+    "787.917857b7.chunk.js.map": "/CIVIL-ENGINEERING-LABS/static/js/787.917857b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa7bd6e9.css",
+    "static/js/main.e6ce07c9.js"
+  ]
+}
