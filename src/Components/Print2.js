@@ -3,11 +3,11 @@ import './Print.css';
 import { Typography } from '@mui/material';
 import img from '../assets/24.jpg'
 
-const Print2 = ({res,first,second,head1,head2,head3,Ref,company,village,city,dist,purpose,dated,title,lab}) => {
+const Print2 = ({res,first,second,head1,head2,head3,Ref,company,village,city,district,subject,dated,title,lab}) => {
   function padTo2Digits(num) {
     return num.toString().padStart(2, '0');
   }
-  
+  console.log("subject is",subject)
   function formatDate(date) {
     return [
       padTo2Digits(date.getDate()),
@@ -21,7 +21,7 @@ const Print2 = ({res,first,second,head1,head2,head3,Ref,company,village,city,dis
   return (
      <div className='maindivT'> 
       <div className='div1'>
-      <p><b className='size'>
+      <p><b className='size' >
         SAGI RAMAKRISHNAM RAJU ENGINEERING COLLEGE (AUTONOMOUS)</b><br/>
         (AFFILIATED TO ANDHRA UNIVERSITY, VISAKHAPATNAM) (RECOGNISED BY ALL INDIA COUNCIL FOR TECH. EDN., NEW DELHI)
         <br/>Accredited by NAAC with 'A' Grade
@@ -35,7 +35,7 @@ const Print2 = ({res,first,second,head1,head2,head3,Ref,company,village,city,dis
           <h3>Principal</h3>
         </div>
         <div>
-          <img src={img} width='150px' height='150px'/>
+          <img src={img} width='150px' height='150px' alt='img'/>
         </div>
         <div className='div1'>
           <p>Phones: Off :08816-223332 Ext. 201<br/>College:08816-224516<br/>Fax:08816--224516<br/><b>Mobile No. 9848773515</b><br/>Profmjraju999@gmail.com<br/>Website:www.srkrec.ac.in</p>
@@ -47,12 +47,12 @@ const Print2 = ({res,first,second,head1,head2,head3,Ref,company,village,city,dis
       </div>
       <br/>
       <div>
-        <Typography variant='body1'>To,<br/>{company}<br/>{village}<br/>{city}<br/>{dist}</Typography>
+        <Typography variant='body1'>To,<br/>{company},<br/>{village},<br/>{city},<br/>{district}.</Typography>
       </div>
       <br/>
       <Typography variant='body1'>Sir,</Typography>
       <div className='div5'>
-        <Typography variant='body1'>Sub:- Test report of {purpose}</Typography><br/>
+        <Typography variant='body1'>Sub:- Test report of {subject} -Reg.</Typography><br/>
         <Typography variant='body1'>Ref:-Your letter Dated: {dated}</Typography>
       </div><br/>
       <div><u className='size'><b>{title}</b></u></div>  <br/>

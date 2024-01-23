@@ -64,7 +64,7 @@ import AggregateGradation from './components/highway-materials-testing/Aggregate
 import ShapeTest from './components/highway-materials-testing/ShapeTest.js';
 function App() {
   return (
-    <div className='Appbg'>
+    <div>
       <Header />
         <Routes>
         <Route path='/' element={<Home/>}/>

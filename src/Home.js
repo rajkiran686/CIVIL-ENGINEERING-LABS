@@ -42,7 +42,7 @@ const Home = () => {
         }]
 return (
     <div >
-        <div  className=' grid grid-cols-2 md:grid-cols-3 justify-items-center  p-5  md:p-16 md:my-10  gap-y-5 md:gap-y-10 '>
+        <div  className=' grid grid-cols-2 lg:grid-cols-3 justify-items-center  p-5  md:p-16 md:my-10  gap-y-5 md:gap-y-10 '>
          {arr.map((value)=>{return(
             <Box   className='card md:w-60 lg:w-96   w-28    md:h-auto h-auto  bg-white  rounded-2xl ' > 
             <Card sx={{borderRadius: '16px' }}  >

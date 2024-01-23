@@ -64,7 +64,7 @@ const Som = () => {
 </button>
         <p className='flex justify-center md:text-4xl text-purple-600 underline'>STRENGTH OF MATERIALS</p>
         <marquee direction="right" style={{color:'red'}} ><h2>LIST OF EXPERIMENTS</h2></marquee>
-        <div className=' grid grid-cols-2 md:grid-cols-3 justify-items-center  p-5  md:p-16  gap-y-5 md:gap-y-10 '>
+        <div className=' grid grid-cols-2 lg:grid-cols-3 justify-items-center  p-5  md:p-16  gap-y-5 md:gap-y-10 '>
          {
           arr.map((value)=>{return(
             <Box className='card md:w-60 lg:w-96   w-28    md:h-auto h-auto  bg-white  rounded-2xl '> 
