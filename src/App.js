@@ -68,7 +68,6 @@ function App() {
       <Header />
         <Routes>
         <Route path='/' element={<Home/>}/>
-        {/*  TODO:Use readable names */}
         <Route path='/sm' element={<Sm/>}/> 
         <Route path='/som' element={<Som/>}/>
         <Route path='/ct' element={<Ct/>}/>
