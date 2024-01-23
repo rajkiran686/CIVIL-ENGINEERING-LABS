@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
-import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+import Header from './components/Header.js'
 import { Route,Routes} from 'react-router-dom';
 import Home from './Home.js'
 import Sm from './pages/Sm.js'
@@ -64,9 +64,9 @@ import AggregateGradation from './components/highway-materials-testing/Aggregate
 import ShapeTest from './components/highway-materials-testing/ShapeTest.js';
 function App() {
   return (
-    <div className='Appbg'>
-      <Header/>
-      <Routes>
+    <div>
+      <Header />
+        <Routes>
         <Route path='/' element={<Home/>}/>
         {/*  TODO:Use readable names */}
         <Route path='/sm' element={<Sm/>}/> 

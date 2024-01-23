@@ -4,7 +4,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import img1 from '../assets/7.jpg';
-import img2 from '../assets/15.jpeg';
+import img2 from '../assets/pycnometer.jpeg';
 import img3 from '../assets/21.jpg'
 import img4 from '../assets/22.jpg'
 import img5 from '../assets/25.jpg'
@@ -57,23 +57,24 @@ var arr=[
 </svg>
   BACK
 </button>
-    <p className='flex justify-center md:text-4xl text-purple-600 underline'>CONCRETE TECHNOLOGY</p>
+    <p className='flex   justify-center md:text-4xl text-purple-600 underline'>CONCRETE TECHNOLOGY</p>
     <marquee direction="right" style={{color:'yellow'}} ><h2>LIST OF EXPERIMENTS</h2></marquee>
-    <div  className=' grid grid-cols-2 md:grid-cols-3 justify-items-center  p-5  md:p-16  gap-y-5 md:gap-y-10 '>
+    <div  className=' grid grid-cols-2 lg:grid-cols-3 justify-items-center  p-5  md:p-16  gap-y-5 md:gap-y-10 '>
       {
         arr.map((value)=>{return(
           <Box  className='card md:w-60 lg:w-96   w-28    md:h-auto h-auto  bg-white  rounded-2xl '> 
-            <Card sx={{borderRadius: '16px'}} >
-                <CardActionArea onClick={()=>{Navigate(value.path)}}>
-                <CardMedia component='img' image={value.img} className='md:h-80 h-28 '></CardMedia>
-                <CardContent className='text-green-400 md:text-blue-500 '>
-                    <p className='text-xs md:text-3xl '>{value.names}</p>
-                </CardContent>
-                <CardActions className='text-xs md:text-2xl text-blue-400 '>
-                    <button>CLICK</button>
-                </CardActions>
-                </CardActionArea>
-            </Card>
+           
+<Card sx={{ borderRadius: '16px' }}>
+  <CardActionArea onClick={() => { Navigate(value.path) }}>
+    <CardMedia component='img' image={value.img} className='w-full h-28 object-cover md:h-80' />
+    <CardContent className='text-green-400 md:text-blue-500'>
+      <p className='text-xs md:text-3xl'>{value.names}</p>
+    </CardContent>
+    <CardActions className='text-xs md:text-2xl text-blue-400'>
+      <button>CLICK</button>
+    </CardActions>
+  </CardActionArea>
+</Card>
             </Box>
         )})
       }

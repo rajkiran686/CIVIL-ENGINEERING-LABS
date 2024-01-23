@@ -1,11 +1,13 @@
 {
+  "homepage": "https://rajkiran686.github.io/CIVIL-ENGINEERING-LABS",
   "name": "project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.11",
+    "@mui/joy": "^5.0.0-beta.19",
     "@mui/material": "^5.11.15",
     "@mui/styled-engine-sc": "^5.11.11",
     "@testing-library/jest-dom": "^5.16.5",
@@ -24,7 +26,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=5000 && react-scripts start",
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "tailwindcss": "^3.3.5"
   }
 }
