@@ -1,49 +1,49 @@
-table, th, td {
-    border:1px solid black;
-  }
-.center{
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.center {
   margin-left: auto;
   margin-right: auto;
- 
 }
-.sample{
+.sample {
   text-align: center;
   padding: 50px;
 }
-.maindivSS{
+.maindivSS {
   padding: 20px;
 }
-.maindivT{
+.maindivT {
   padding: 50px;
 }
-.div1{
+.div1 {
   text-align: center;
 }
-.div2{
+.div2 {
   display: flex;
   justify-content: space-between;
 }
-.div4{
+
+.div4 {
   display: flex;
 }
-.div5{
+.div5 {
   margin-left: 50px;
 }
-.div6{
+.div6 {
   width: 100%;
 }
-.div7SS{
+.div7SS {
   margin-top: 100px;
   display: flex;
   justify-content: space-between;
-
 }
-.div7T{
+.div7T {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-
 }
-.size{
+.size {
   font-size: large;
 }
