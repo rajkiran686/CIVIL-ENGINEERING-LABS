@@ -57,15 +57,15 @@ const Brineels = () => {
         <form onSubmit={handleSubmit(submit)} style={{alignItems:'center'}}>
           <div style={{textAlign:'center'}}>
         <Stack spacing={2} direction='column' className='w-auto   space-y-5  p-5 md:max-w-lg mx-auto'>
-          <Textfield label="Diameter of indentation [d1]" valueAsNumber={true} variant='outlined' register={register} pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} required={{value:true,message:"this field is required"}} name='w1' helperText={errors.w1?.message} error={errors?.w1} />
-          <Textfield label="Diameter of indentation [d2]" valueAsNumber={true} variant='outlined' register={register} pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} required={{value:true,message:"this field is required"}} name='w2' helperText={errors.w2?.message} error={errors?.w2} />
+          <Textfield label="Diameter of indentation [d1]"  variant='outlined' register={register} pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} required={{value:true,message:"this field is required"}} name='w1' helperText={errors.w1?.message} error={errors?.w1} />
+          <Textfield label="Diameter of indentation [d2]"  variant='outlined' register={register} pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} required={{value:true,message:"this field is required"}} name='w2' helperText={errors.w2?.message} error={errors?.w2} />
           <div style={{display:'flex',justifyContent:'space-evenly'}}>
             <Button variant='contained' style={{width:'80%'}} type='submit'>Submit</Button>
             <button onClick={handleprint} style={{width:'20%'}} className=' bg-pink-600'>Print</button>
           </div>
           <div>
             {
-              Object.keys(errors).length!=0 && <ErrorMessage>please fill all the fields</ErrorMessage>
+              Object.keys(errors).length!==0 && <ErrorMessage>please fill all the fields</ErrorMessage>
             }
           </div>
           <div style={{fontSize:'20px'}}>Brineel's Hardness Number: {res} kg/mm<sup>2</sup></div>

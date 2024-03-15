@@ -70,56 +70,72 @@ const SimplySupported = () => {
         name1:'w4',
         name2:'w5',
         er1:errors?.w4,
-        er2:errors?.w5
+        er2:errors?.w5,
+        ht1: errors.w4?.message,
+        ht2: errors.w5?.message,
       },
       {
         trail:'Trail-2',
         name1:'w6',
         name2:'w7',
         er1:errors?.w6,
-        er2:errors?.w7
+        er2:errors?.w7,
+        ht1: errors.w6?.message,
+        ht2: errors.w7?.message,
       },
       {
         trail:'Trail-3',
         name1:'w8',
         name2:'w9',
         er1:errors?.w8,
-        er2:errors?.w9
+        er2:errors?.w9,
+        ht1: errors.w8?.message,
+        ht2: errors.w9?.message,
       },
       {
         trail:'Trail-4',
         name1:'w10',
         name2:'w11',
         er1:errors?.w10,
-        er2:errors?.w11
+        er2:errors?.w11,
+        ht1: errors.w10?.message,
+        ht2: errors.w11?.message,
       },
       {
         trail:'Trail-5',
         name1:'w12',
         name2:'w13',
         er1:errors?.w12,
-        er2:errors?.w14
+        er2:errors?.w13,
+        ht1: errors.w12?.message,
+        ht2: errors.w13?.message,
       },
       {
         trail:'Trail-6',
         name1:'w14',
         name2:'w15',
         er1:errors?.w14,
-        er2:errors?.w15
+        er2:errors?.w15,
+        ht1: errors.w14?.message,
+        ht2: errors.w15?.message,
       },
       {
         trail:'Trail-7',
         name1:'w16',
         name2:'w17',
         er1:errors?.w16,
-        er2:errors?.w17
+        er2:errors?.w17,
+        ht1: errors.w16?.message,
+        ht2: errors.w17?.message,
       },
       {
         trail:'Trail-8',
         name1:'w18',
         name2:'w19',
         er1:errors?.w18,
-        er2:errors?.w19
+        er2:errors?.w19,
+        ht1: errors.w18?.message,
+        ht2: errors.w19?.message,
       }
     ]
 return (
@@ -141,14 +157,14 @@ return (
           <form onSubmit={handleSubmit(submit)}>
     <Stack spacing={2} direction='column' className='w-auto   space-y-5  p-5 md:max-w-lg mx-auto' >
       <Typography variant='h6'><u>CROSS-SECTIONAL DIMENSIONS OF BEAM</u></Typography>
-    <Textfield label="Width of the beam[b]" variant="outlined" name="w1" register={register} valueAsNumber={true} required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w1?.message} error={errors?.w1}/>
-    <Textfield label="Depth of the beam[d]" variant="outlined" name="w2" register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w2?.message} error={errors?.w2}/>
-    <Textfield label="Span of the beam[l]" variant="outlined" name="w3" register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w3?.message} error={errors?.w3}/>
+    <Textfield label="Width of the beam[b]" variant="outlined" name="w1" register={register}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w1?.message} error={errors?.w1}/>
+    <Textfield label="Depth of the beam[d]" variant="outlined" name="w2" register={register} required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w2?.message} error={errors?.w2}/>
+    <Textfield label="Span of the beam[l]" variant="outlined" name="w3" register={register} required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}} helperText={errors.w3?.message} error={errors?.w3}/>
     <div>
       {data.map((val)=>{return(<div>
     <Typography variant='h6'><u>{val.trail}</u></Typography>
-    <Textfield label="Enter the load applied in (kgs)" variant="outlined" name={val.name1} register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={val.er1}/><br/><br/>
-    <Textfield label="Enter the final deflection reading in (mm)" variant="outlined" name={val.name2} register={register} valueAsNumber={true}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={val.er2}/>
+    <Textfield label="Enter the load applied in (kgs)" variant="outlined" name={val.name1} register={register}   required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={val.er1} helperText={val.ht1}/><br/><br/>
+    <Textfield label="Enter the final deflection reading in (mm)" variant="outlined" name={val.name2} register={register}  required={{value:true,message:"this field is required"}}   pattern={{value:/^(0|[1-9]\d*)(\.\d+)?$/,message:'enter the numbers only'}}  error={val.er2} helperText={val.ht2}/>
     </div>)})}
     </div>
     <div style={{display:'flex',justifyContent:'space-evenly'}}>
