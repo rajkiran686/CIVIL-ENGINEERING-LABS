@@ -7,9 +7,9 @@ import Textfield from './Textfield'
 import Print2 from './Print2'
 import { Button } from '@mui/material'
 import ErrorMessage from './ErrorMessage'
-import ExamplePrint from './ExamplePrint'
+import ExamplePrint from './LetterHeadPrint'
 
-const CustomerAddress = ({ rows, columns }) => {
+const CustomerAddress = ({ rows, columns, Ref, labName, testName, dateOfTestConducted }) => {
   var [company, setcompany] = useState()
   var [village, setvillage] = useState()
   var [city, setcity] = useState()
@@ -106,15 +106,15 @@ const CustomerAddress = ({ rows, columns }) => {
       <div style={{ visibility: 'hidden' }}>
         <div ref={ComponentRef}>
           <ExamplePrint
-            Ref="SM/W 183/2021-22"
+            Ref={Ref}
             company={company}
             village={village}
             city={city}
             district={district}
             subject={subject}
-            dated="15-03-2023."
-            title="TENSION TEST ON STEEL:"
-            lab="SM"
+            dated={dateOfTestConducted}
+            title={testName}
+            lab={labName}
             rows={rows}
             columns={columns}
           />
