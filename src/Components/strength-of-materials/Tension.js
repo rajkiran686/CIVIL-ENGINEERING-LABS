@@ -1,14 +1,20 @@
-import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material'
+import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import ErrorMessage from '../ErrorMessage'
-import Textfield from '../Textfield'
+import { useReactToPrint } from 'react-to-print'
 import CustomerAddress from '../CustomerAddress'
+import ErrorMessage from '../ErrorMessage'
+import NormalPrint from '../NormalPrint'
+import Textfield from '../Textfield'
 const Tension = () => {
   var [res, setres] = useState()
   var [first, setfirst] = useState()
   var [second, setsecond] = useState()
+  var [value, setValue] = useState('')
+  const [isSubmit, setIsSubmit] = useState(false)
+  const [showAddressForm, setShowAddressForm] = useState(false)
+  var [printButtonClicked, setPrintButtonClicked] = useState(false)
 
   const {
     register,
@@ -31,9 +37,12 @@ const Tension = () => {
   }
 
   function print() {
-    document.getElementById('demo').style.display = 'block'
+    setPrintButtonClicked(true)
   }
-
+  var ComponentRef = useRef()
+  var handleprint = useReactToPrint({
+    content: () => ComponentRef.current
+  })
   const rows = [
     { id: 1, col1: 'the mean diameter of the rod[d1]', col2: first, col3: 'N' },
     { id: 2, col1: ' the ultimate load of the rod[p]', col2: second, col3: 'mm' },
@@ -47,6 +56,23 @@ const Tension = () => {
     { field: 'col3', headerName: 'Units', width: 160 }
   ]
 
+  const handleChange = e => {
+    setValue(e.target.value)
+    if (e.target.value === 'with_letterhead') {
+      setShowAddressForm(true)
+    } else {
+      setIsSubmit(true)
+      setShowAddressForm(false)
+    }
+  }
+
+  /*when we submit the button then the page refresh and update the states and call the handlePrint function*/
+  useEffect(() => {
+    if (isSubmit === true) {
+      handleprint()
+      setIsSubmit(false)
+    }
+  }, [isSubmit])
   return (
     <div>
       <button
@@ -130,8 +156,38 @@ const Tension = () => {
           </div>
         </form>
       </div>
-      <div style={{ display: 'none' }} id="demo">
-        <CustomerAddress rows={rows} columns={columns} />
+      {printButtonClicked && (
+        <div className="p-5 max-w-lg mx-auto">
+          <FormControl>
+            <FormLabel id="demo-controlled-radio-buttons-group">Letter Head</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-controlled-radio-buttons-group"
+              name="controlled-radio-buttons-group"
+              value={value}
+              onChange={handleChange}
+            >
+              <FormControlLabel value="with_letterhead" control={<Radio />} label="With_Letterhead" />
+              <FormControlLabel value="without_letterhead" control={<Radio />} label="Without_Letterhead" />
+            </RadioGroup>
+          </FormControl>
+        </div>
+      )}
+      {showAddressForm && (
+        <div>
+          <CustomerAddress
+            rows={rows}
+            columns={columns}
+            Ref="SM/W 183/2021-22"
+            labName="SM"
+            testName="TENSION TEST ON STEEL:"
+            dateOfTestConducted="15-03-2024."
+          />
+        </div>
+      )}
+      <div style={{ visibility: 'hidden' }}>
+        <div ref={ComponentRef}>
+          <NormalPrint rows={rows} columns={columns} ExperimentName="TENSION TEST ON STEEL" />
+        </div>
       </div>
     </div>
   )
